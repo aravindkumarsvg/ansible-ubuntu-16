@@ -1,0 +1,5 @@
+---
+# vars file for aws-xray
+xray_daemon_state: 'directory'
+aws_region: 'ap-south-1'
+xray_daemon_extraction: "/home/aravind/Workspace/devops/aws/resources/xray-daemon/"

@@ -1,0 +1,16 @@
+---
+# tasks file for aws-xray
+- name: Create the xray daemon extraction point
+  file:
+    path: "{{ vars['xray_daemon_extraction'] }}"
+    state: "{{ vars['xray_daemon_state'] }}"
+    mode: 0755
+- name: Checking the stats of the xray daemon extraction point
+  stat: path="{{ vars['xray_daemon_extraction'] }}"
+  register: xray_daemon_stats
+- name: Download and unzips aws xray daemon
+  unarchive:
+    src: 'https://s3.dualstack.{{ aws_region }}.amazonaws.com/aws-xray-assets.{{ aws_region }}/xray-daemon/aws-xray-daemon-linux-2.x.zip'
+    dest: "{{ vars['xray_daemon_extraction'] }}"
+    remote_src: yes
+  when: xray_daemon_stats.stat.exists

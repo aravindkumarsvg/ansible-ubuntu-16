@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Aravind Kumar.S
+  description: AWS Xray daemon installation
+  license: Apache
+  min_ansible_version: 1.2
+  platforms:
+    - ubuntu
+  version:
+    - xenial
+  categories:
+    - system
+    - cloud
+  galaxy_tags: ["aws", "xray", "daemon"]
+dependencies: []
