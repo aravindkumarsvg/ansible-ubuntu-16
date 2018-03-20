@@ -1,13 +1,16 @@
 ---
 # tasks file for dynatrace-oneagent uninstallation
-- include_tasks: "check.yml"
+- name: Checking for the availability of oneagent uninstaller
+  stat:
+    path: "{{ oneagent_installation_dir }}/{{ oneagent_uninstaller }}"
+  register: oneagent_uninstaller_stat
 - name: Uninstalls the oneagent
   shell: "sh {{ oneagent_installation_dir }}/{{ oneagent_uninstaller }}"
   become: yes
-  when: oneagent_stat.stat.exists
+  when: oneagent_uninstaller_stat.stat.exists
 - name: Removes the oneagent directory
   file:
     path: "{{ dynatrace_path }}"
     state: "absent"
   become: yes
-  when: oneagent_clean_uninstall and oneagent_stat.stat.exists
+  when: oneagent_clean_uninstall and oneagent_uninstaller_stat.stat.exists
