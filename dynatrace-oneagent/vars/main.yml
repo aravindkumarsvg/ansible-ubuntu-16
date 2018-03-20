@@ -1,0 +1,6 @@
+---
+# vars file for dynatrace-oneagent
+oneagent_installation_dir: "/opt/dynatrace/oneagent/agent"
+dynatrace_path: "/opt/dynatrace"
+oneagent_installer: "/tmp/dynatrace_oneagent_install.sh"
+oneagent_uninstaller: "uninstall.sh"

@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Aravind Kumar.S
+  description: "Installs/Uninstalls the dynatrace oneagent"
+  license: Apache
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags: ["dynatrace", "oneagent"]
+dependencies: []

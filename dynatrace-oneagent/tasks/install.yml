@@ -1,0 +1,12 @@
+---
+# tasks file for dynatrace-oneagent installation
+- include_tasks: "check.yml"
+- name: Downloads the oneagent installation script
+  get_url:
+    url: "https://{{ oneagent_key_id }}.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?Api-Token={{ oneagent_api_token }}&arch=x86&flavor=default"
+    dest: "{{ oneagent_installer }}"
+  when: not oneagent_stat.stat.exists
+- name: Installs the oneagent
+  shell: "sh {{ oneagent_installer }}"
+  become: yes
+  when: not oneagent_stat.stat.exists

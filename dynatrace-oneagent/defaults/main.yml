@@ -1,0 +1,6 @@
+---
+# defaults file for dynatrace-oneagent
+oneagent_action: "install"
+oneagent_key_id: ""
+oneagent_api_token: ""
+oneagent_clean_uninstall: False

@@ -1,0 +1,4 @@
+---
+# tasks file for dynatrace-oneagent
+- include_tasks: "{{ oneagent_action }}.yml"
+  when: oneagent_action is defined

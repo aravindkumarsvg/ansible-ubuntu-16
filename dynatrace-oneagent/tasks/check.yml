@@ -1,0 +1,6 @@
+---
+# tasks file for dynatrace-oneagent availability check
+- name: Checking for the availability of oneagent
+  stat:
+    path: "{{ oneagent_installation_dir }}"
+  register: oneagent_stat
