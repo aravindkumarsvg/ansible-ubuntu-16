@@ -1,2 +1,3 @@
 ---
 # defaults file for aws-xray
+xray_daemon_state: 'directory'

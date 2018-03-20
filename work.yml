@@ -1,8 +1,10 @@
 ---
 - hosts: local
   roles:
-    - role: "dynatrace-oneagent"
-      oneagent_action: "install"
-      oneagent_key_id: "xxxxxx"
-      oneagent_api_token: "xxxxxxxxxxxxxxxxxx"
-      oneagent_clean_uninstall: True
+    - role: "aws-xray"
+      xray_daemon_state: "absent"
+#    - role: "dynatrace-oneagent"
+#      oneagent_action: "uninstall"
+#      oneagent_key_id: "xxxxxx"
+#      oneagent_api_token: "xxxxxxxxxxxxxxxxxx"
+#      oneagent_clean_uninstall: True
